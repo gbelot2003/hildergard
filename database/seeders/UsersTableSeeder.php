@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -261,6 +262,23 @@ class UsersTableSeeder extends Seeder
             ),
         ));
         
-        
+        $user = User::find(1);
+        $user->assignRole('administrador');
+
+        $user = User::find(2);
+        $user->assignRole('editor');
+
+        $user = User::find(3);
+        $user->assignRole('maestro');
+
+        $user = User::find(4);
+        $user->assignRole('padre');
+
+        $user = User::find(5);
+        $user->assignRole('alumno');
+
+        $user = User::find(6);
+        $user->assignRole('alumno');
+
     }
 }
