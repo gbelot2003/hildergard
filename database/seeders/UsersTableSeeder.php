@@ -280,5 +280,46 @@ class UsersTableSeeder extends Seeder
         $user = User::find(6);
         $user->assignRole('alumno');
 
+        $user = User::find(7);
+        $user->assignRole('alumno');
+
+        $user = User::find(8);
+        $user->assignRole('alumno');
+
+        $user = User::find(9);
+        $user->assignRole('alumno');
+
+        $user = User::find(10);
+        $user->assignRole('alumno');
+
+        $user = User::find(11);
+        $user->assignRole('alumno');
+
+        $user = User::find(12);
+        $user->assignRole('alumno');
+
+        $user = User::find(13);
+        $user->assignRole('alumno');
+
+        $user = User::find(14);
+        $user->assignRole('alumno');
+
+        $user = User::find(15);
+        $user->assignRole('alumno');
+
+        $user = User::find(16);
+        $user->assignRole('alumno');
+
+        $user = User::find(17);
+        $user->assignRole('alumno');
+
+        $user = User::find(18);
+        $user->assignRole('alumno');
+
+        $user = User::find(19);
+        $user->assignRole('alumno');
+
+        $user = User::find(20);
+        $user->assignRole('alumno');
     }
 }
