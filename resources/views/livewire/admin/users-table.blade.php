@@ -1,7 +1,7 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <input type="text" wire:model="search" class="form-control" placeholder="Ingrese el nombre o correo de usuario">
+            <input type="text" wire:model.debounce.800="search" class="form-control" placeholder="Ingrese el nombre o correo de usuario">
         </div>
         <div class="card-body"> 
             <table class="table table-hover table-strep">
@@ -15,7 +15,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    @forelse ($users as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
@@ -25,7 +25,15 @@
                                 <a class="btn btn-primary" href="{{ route('admin.users.edit', $user) }}">Editar</a>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="5">
+                                <div class="text-center">
+                                   <strong> No se encontraron registros!!!</strong>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
