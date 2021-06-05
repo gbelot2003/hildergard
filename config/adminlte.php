@@ -248,7 +248,7 @@ return [
         ],
         [
             'text' => 'Usuarios',
-            'url'  => 'admin/usuarios',
+            'route'  => 'admin.users.index',
             'can'  => 'editor',
         ],
        /** [
