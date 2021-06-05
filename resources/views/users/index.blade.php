@@ -7,5 +7,5 @@
 @stop
 
 @section('content')
-    
+    @livewire('admin.users-table')
 @stop
