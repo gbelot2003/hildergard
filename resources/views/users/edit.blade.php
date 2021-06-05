@@ -7,21 +7,26 @@
 @stop
 
 @section('content')
+@if (session('info'))
+    <div class="alert alert-info">
+        <strong>{{ session('info') }}</strong>
+    </div>
+@endif
 <div class="card">
     <div class="card-body">
         {{ Form::model($user, ['route' => ['admin.users.update', $user], 'method' => 'put']) }}
-            <form-group class="mb-5">
+            <div class="form-group mb-3">
                 <label for="name">Nombre</label>
                 {{ Form::text('name', null, ['class' => 'form-control']) }}
-            </form-group>
+            </div>
 
-            <form-group>
+            <div class="form-group mb-3">
                 <label for="email">E-Mail</label>
                 {{ Form::email('email', null, ['class' => 'form-control']) }}
-            </form-group>
+            </div>
 
-            <form-group>
-                <label>Roles administrativos</label>
+            <div class="form-group mb-5">
+                <label class="h5">Listadod de Roles</label>
                 @foreach ($roles as $role)
                     <div>
                         <label>
@@ -30,8 +35,10 @@
                         </label>
                     </div>
                 @endforeach
-
-            </form-group>
+            </div>
+            <div class="col-md-12">
+                {{ Form::submit('Editar', ['class' => 'btn btn-primary']) }}
+            </div>
         {{ Form::close() }}
 
     </div>

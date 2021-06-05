@@ -33,12 +33,19 @@ class RolesTableSeeder extends Seeder
             'ver roles', 'crear roles', 'editar roles', 'suspender roles'
         ];
 
+        $permissionEditor = [
+            'ver usuarios', 'editar usuarios'
+        ];
+
         foreach ($roles as $roles) {
             Role::create(['name' => $roles]);
         }
 
         $role = Role::findByName('administrador');
         $role->givePermissionTo($permissionsAdmin);
+
+        $role2 = Role::findByName('editor');
+        $role2->givePermissionTo($permissionEditor);
 
     }
 }

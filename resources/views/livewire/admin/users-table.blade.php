@@ -10,6 +10,7 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Email</th>
+                        <th>Roles</th>
                         <th>Estado</th>
                         <th></th>
                     </tr>
@@ -20,9 +21,23 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->status }}</td>
+                            <th>
+                                <ul>
+                                    @foreach ($user->roles as $role)
+                                        <li>{{ $role->name }}</li>
+                                    @endforeach
+                                </ul>
+                                
+                            </th>
                             <td>
-                                <a class="btn btn-primary" href="{{ route('admin.users.edit', $user) }}">Editar</a>
+                                @if ($user->status == true)
+                                <span class="badge badge-primary">Activo</span>
+                                @else
+                                <span class="badge badge-danger">Suspendido</span>
+                                @endif
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="{{ route('admin.users.edit', $user->id) }}">Editar</a>
                             </td>
                         </tr>
                     @empty

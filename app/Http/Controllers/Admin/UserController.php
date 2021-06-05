@@ -60,7 +60,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $roles = Role::all();
-        $user = User::findOrFail($id)->with('roles')->first();
+        $user = User::findOrFail($id);
 
         return view('users.edit', compact('user', 'roles'));
     }
@@ -74,7 +74,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->roles()->sync($request->roles);
+        return redirect()->route('admin.users.edit', $user)->with('info', 'Roles asignados correctamente');
     }
 
     /**
