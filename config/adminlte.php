@@ -360,16 +360,7 @@ return [
     */
 
     'plugins' => [
-        'local' => [
-            'active' => true,
-            'files' => [
-                [
-                    'type' => 'css',
-                    'asset' => true,
-                    'location' => 'css/app.css'
-                ],
-            ],
-        ],
+
         'Datatables' => [
             'active' => false,
             'files' => [
@@ -437,6 +428,21 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        'local' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'css/app.css'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'js/app.js'
                 ],
             ],
         ],
