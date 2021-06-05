@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -58,8 +59,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $roles = Role::all();
         $user = User::findOrFail($id)->with('roles')->first();
-        return view('users.edit', compact('user'));
+
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
