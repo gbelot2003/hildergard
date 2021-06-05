@@ -360,6 +360,16 @@ return [
     */
 
     'plugins' => [
+        'local' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'css/app.css'
+                ],
+            ],
+        ],
         'Datatables' => [
             'active' => false,
             'files' => [
