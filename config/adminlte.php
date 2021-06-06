@@ -431,8 +431,23 @@ return [
                 ],
             ],
         ],
-        'local' => [
+        'switch' => [
             'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js'
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css'
+                ]
+            ]
+        ],
+        'local' => [
+            'active' => false,
             'files' => [
                 [
                     'type' => 'css',

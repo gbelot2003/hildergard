@@ -74,7 +74,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $user = User::findOrFail($id);
+        $user->update($request->all());
         $user->roles()->sync($request->roles);
         return redirect()->route('admin.users.edit', $user)->with('info', 'Roles asignados correctamente');
     }
