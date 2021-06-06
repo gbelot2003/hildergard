@@ -74,9 +74,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if (!$request->has('status')){
+            $request['status'] = false;
+        } else {
+            $request['status'] = true;
+        }
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'status' => 'required',
+        ]);
+
         $user = User::findOrFail($id);
+        $user->update($request->all());
         $user->roles()->sync($request->roles);
-        return redirect()->route('admin.users.edit', $user)->with('info', 'Roles asignados correctamente');
+        return redirect()->route('admin.users.index')
+            ->with('info', 'Los datos han sido modificados correctamente');
     }
 
     /**
