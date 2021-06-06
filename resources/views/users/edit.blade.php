@@ -28,7 +28,7 @@
 
             <div class="col-md-12 mb-3">
                 <div>Estado de Usuario</div>
-                {{ Form::checkbox('status', null, 1, [
+                {{ Form::checkbox('status', null, $user->status, [
                     'data-toggle' => 'toggle',
                     'data-on' => 'Activo',
                     'data-off' => 'Desactivado',
