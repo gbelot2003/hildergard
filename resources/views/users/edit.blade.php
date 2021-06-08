@@ -6,7 +6,6 @@
     <h1>Edición de Usuarios</h1>
 @stop
 
-
 @section('content')
 @if (session('info'))
     <div class="alert alert-info">
@@ -20,12 +19,10 @@
                 <label for="name">Nombre</label>
                 {{ Form::text('name', null, ['class' => 'form-control']) }}
             </div>
-
             <div class="form-group col-md-12 mb-3">
                 <label for="email">E-Mail</label>
                 {{ Form::email('email', null, ['class' => 'form-control']) }}
             </div>
-
             <div class="col-md-12 mb-3">
                 <div>Estado de Usuario</div>
                 {{ Form::checkbox('status', null, $user->status, [
@@ -35,7 +32,6 @@
                     'data-onstyle' => "primary"
                     ]) }}
             </div>
-
             <div class="form-group col-md-12 mb-5">
                 <label class="h5">Listadod de Roles</label>
                 @foreach ($roles as $role)
@@ -47,7 +43,6 @@
                     </div>
                 @endforeach
             </div>
-            
             <div class="col-md-12">
                 {{ Form::submit('Editar', ['class' => 'btn btn-primary']) }}
             </div>

@@ -21,7 +21,8 @@ class UsersTable extends Component
     public function render()
     {
         
-        $users = User::where('name', 'LIKE', '%' . $this->search . '%')
+        $users = User::OrderBy('id', 'DESC')
+        ->where('name', 'LIKE', '%' . $this->search . '%')
         ->orWhere('email', 'LIKE', '%' . $this->search . '%')
         ->paginate(10);
 
