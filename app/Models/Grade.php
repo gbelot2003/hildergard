@@ -16,4 +16,13 @@ class Grade extends Model
     {
         return "/admin/grados/{$this->id}";
     }
+
+    /**
+     * Relacion con User
+     * Tipo Profesor
+     */
+    public function teacher()
+    {
+        return $this->belongsTo(User::class, 'teacher_id', 'id');
+    }
 }

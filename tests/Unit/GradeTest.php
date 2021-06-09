@@ -2,8 +2,9 @@
 
 namespace Tests\Unit;
 
-use App\Models\Grade;
 use Tests\TestCase;
+use App\Models\Grade;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -18,4 +19,11 @@ class GradeTest extends TestCase
 
        $this->assertEquals('/admin/grados/' . $grade->id, $grade->path());
    }
+
+   /** @test */
+   public function has_maestro_guia()
+    {
+        $grado = Grade::factory()->create();
+        $this->assertInstanceOf(User::class, $grado->teacher);
+    }
 }

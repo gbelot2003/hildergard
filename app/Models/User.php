@@ -43,4 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'status' => 'boolean',
     ];
+
+    /**
+     * Relacion con Grados
+     * Solo usuarios tipo maestros
+     */
+    public function grades()
+    {
+        return $this->hasMany(Grade::class, 'teacher_id', 'id');
+    }
 }
