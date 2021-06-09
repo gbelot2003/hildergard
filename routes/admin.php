@@ -7,4 +7,6 @@ use App\Http\Controllers\Admin\UserController;
 
 Route::resource('usuarios', UserController::class)->names('admin.users');
 
+Route::get('grados', [GradeController::class, 'index']);
+Route::get('grados/{id}', [GradeController::class, 'show']);
 Route::post('grados', [GradeController::class, 'store']);

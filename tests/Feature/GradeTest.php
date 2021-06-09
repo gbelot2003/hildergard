@@ -27,6 +27,8 @@ class GradeTest extends TestCase
         $this->post('/admin/grados', $attributes);
 
         $this->assertDatabaseHas('grades', $attributes);
+
+        $this->get('/admin/grados')->assertSee( $attributes['name']);
     }
 
     /** @test */
@@ -39,8 +41,17 @@ class GradeTest extends TestCase
         $attributes = json_decode(Grade::factory(['name' => ''])->make(), true);
 
         $this->post('/admin/grados', $attributes)
-            ->assertSessionHasErrors('name');
-        
-        
+            ->assertSessionHasErrors('name');        
+    }
+
+    /** @test */
+    public function a_user_can_view_a_grade()
+    {
+        $this->withoutMiddleware();
+
+        $grade = Grade::factory()->create();
+
+        $this->get('/admin/grados/' . $grade->id)
+            ->assertSee($grade->name);
     }
 }
