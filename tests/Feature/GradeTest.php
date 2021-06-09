@@ -12,6 +12,7 @@ class GradeTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
+
     /** @test */
     public function a_grade_requires_a_title()
     {
