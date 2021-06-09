@@ -15,8 +15,13 @@ class CreateGradesTable extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('teacher_id');
             $table->string('name');
             $table->timestamps();
+
+            $table->foreign('teacher_id')
+                ->references('id')
+                ->on('users');
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\Grade;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,6 +24,7 @@ class GradeFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(),
+            'teacher_id' => User::factory()->create()->id,
         ];
     }
 }

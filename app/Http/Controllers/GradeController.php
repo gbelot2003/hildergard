@@ -22,7 +22,13 @@ class GradeController extends Controller
 
     public function store(Request $request)
     {
-        $grade = Grade::create($request->validate(['name' => 'required']));
+        //dd($request-all());
+        $grade = Grade::create($request->validate(
+            [
+                'name' => 'required',
+                'teacher_id' => 'required',
+            ]
+        ));
 
         return redirect()->to('admin/grades')->with('flash', 'El nuevo grado a sido creado');
     }

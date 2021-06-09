@@ -14,7 +14,7 @@ class GradeTest extends TestCase
     /** @test */
    public function it_has_a_path()
    {
-       $grade = Grade::factory()->create();
+       $grade = Grade::factory()->make();
 
        $this->assertEquals('/admin/grados/' . $grade->id, $grade->path());
    }
