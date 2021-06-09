@@ -10,13 +10,14 @@ class GradeController extends Controller
 
     public function index()
     {
-        return Grade::all();
+        $grades = Grade::all();
+        return view('grades.index', compact('grades'));
     }
 
     public function show($id)
     {
         $grado = Grade::findOrFail($id);
-        return $grade;
+        return view('grades.show', ['grade' => $grade]);
     }
 
     public function store(Request $request)
