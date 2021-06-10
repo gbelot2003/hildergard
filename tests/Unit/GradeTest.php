@@ -24,6 +24,6 @@ class GradeTest extends TestCase
    public function has_maestro_guia()
     {
         $grado = Grade::factory()->create();
-        $this->assertInstanceOf(User::class, $grado->teacher);
+        $this->assertEquals(1, $grado->teacher->count());
     }
 }
