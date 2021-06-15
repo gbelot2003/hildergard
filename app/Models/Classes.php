@@ -30,4 +30,15 @@ class Classes extends Model
     {
         return $this->belongsTo(Grade::class);
     }
+
+    /**
+     * Relacion con Lecciones
+     *
+     * @return void
+     */
+    public function lections()
+    {
+        return $this->hasMany(lection::class, 'classes_id', 'id');
+    }
+
 }
