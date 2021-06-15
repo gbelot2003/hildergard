@@ -48,8 +48,19 @@ class User extends Authenticatable
      * Relacion con Grados
      * Solo usuarios tipo maestros
      */
-    public function grade()
+    public function isTeacher()
     {
-        return $this->hasOne(Grade::class, 'teacher_id');
+        return $this->hasOne(Grade::class, 'teacher_id', 'id');
     }
+
+    /**
+     * Relacion muchos a muchos grados
+     *
+     * @return void
+     */
+    public function grades()
+    {
+        return $this->belongsToMany(Grade::class);
+    }
+
 }

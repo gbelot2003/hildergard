@@ -26,4 +26,15 @@ class Grade extends Model
     {
         return $this->belongsTo(User::class, 'teacher_id', 'id');
     }
+
+    /**
+     * Relacion muchos a muchos para estudientas
+     *
+     * @return void
+     */
+    public function studerns()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
 }
