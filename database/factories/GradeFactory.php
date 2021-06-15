@@ -25,6 +25,7 @@ class GradeFactory extends Factory
         return [
             'name' => $this->faker->sentence(),
             'teacher_id' => User::factory()->create()->id,
+            'year' => '2012'
         ];
     }
 }

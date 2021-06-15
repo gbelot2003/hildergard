@@ -29,7 +29,8 @@ class GradeController extends Controller
         $grade = Grade::create($request->validate(
             [
                 'name' => 'required',
-                'teacher_id' => 'required', 
+                'teacher_id' => 'required',
+                'year' => 'required' 
             ]
         ));
 

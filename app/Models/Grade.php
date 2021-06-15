@@ -10,7 +10,7 @@ class Grade extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'teacher_id'];
+    protected $fillable = ['name', 'teacher_id', 'year'];
 
     /** Configuracion de ruta de modelo */
     public function path()

@@ -40,11 +40,12 @@ class GradeTest extends TestCase
     /** @test */
     public function a_user_can_create_grades() 
     {
+        
         // Creamos un usuario
         $user = User::factory()->make();
 
         // Creamos un objeto Grade como array
-        $attributes = json_decode(Grade::factory()->make(), true);
+        $attributes = Grade::factory()->raw();
 
         // Instanciamos al usuario a sesion
         $this->actingAs($user);
