@@ -41,4 +41,14 @@ class Classes extends Model
         return $this->hasMany(lection::class, 'classes_id', 'id');
     }
 
+    /**
+     * Relacion con taras/trabajos
+     *
+     * @return void
+     */
+    public function tasks()
+    {
+        return $this->hasMany(Task::class, 'classes_id', 'id');
+    }
+
 }
