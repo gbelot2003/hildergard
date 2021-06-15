@@ -17,6 +17,9 @@ class CreateClassesTable extends Migration
             $table->id();
             $table->unsignedInteger('teacher_id');
             $table->unsignedInteger('grade_id');
+            $table->string('name');
+            $table->dateTime('start');
+            $table->dateTime('end');
             $table->timestamps();
 
             $table->foreign('teacher_id')

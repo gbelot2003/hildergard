@@ -26,6 +26,9 @@ class ClassesFactory extends Factory
         return [
             'teacher_id' => User::factory()->create()->id,
             'grade_id' => Grade::factory()->create()->id,
+            'name' => $this->faker->sentence,
+            'start' => $this->faker->dateTime,
+            'end' => $this->faker->dateTime
         ];
     }
 }

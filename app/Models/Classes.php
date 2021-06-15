@@ -9,7 +9,7 @@ class Classes extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['teacher_id', 'grade_id'];
+    protected $fillable = ['teacher_id', 'grade_id', 'name', 'start', 'end'];
 
     /**
      * Relacion entre Clase y maestro
