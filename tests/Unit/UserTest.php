@@ -19,6 +19,8 @@ class UserTest extends TestCase
     public function has_grades()
     {
         $user = User::factory()->create();
-        $this->assertInstanceOf(Collection::class, $user->grades);
+        $grade = Grade::factory(['teacher_id' => $user->id])->create();
+
+        $this->assertInstanceOf(Grade::class, $user->grade);
     }
 }
