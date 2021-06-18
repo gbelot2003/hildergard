@@ -9,7 +9,7 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['classes_id', 'name'];
+    protected $fillable = ['classes_id', 'name', 'start', 'end', 'description'];
 
         /**
      * Relacion con Modelo de Clases

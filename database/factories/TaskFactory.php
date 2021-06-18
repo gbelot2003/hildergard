@@ -25,6 +25,9 @@ class TaskFactory extends Factory
         return [
             'classes_id' => Classes::factory()->create()->id,
             'name' => $this->faker->sentence,
+            'start' => $this->faker->dateTime,
+            'end' => $this->faker->dateTime,
+            'description' => $this->faker->paragraph
         ];
     }
 }

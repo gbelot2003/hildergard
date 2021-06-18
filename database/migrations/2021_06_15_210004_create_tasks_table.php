@@ -17,6 +17,9 @@ class CreateTasksTable extends Migration
             $table->id();
             $table->unsignedInteger('classes_id');
             $table->string('name');
+            $table->text('description');
+            $table->dateTime('start');
+            $table->dateTime('end');
             $table->timestamps();
             
             $table->foreign('classes_id')
