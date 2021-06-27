@@ -29,6 +29,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasRole('administrador') ? true : null;
         });
 
+        Gate::define('editor', function (User $user, Post $post) {
+            return $user->hasRole('editor') ? true : null;
+        });
+
         Gate::after(function ($user, $ability) {
             return $user->hasRole('editor') ? true : null;
         });

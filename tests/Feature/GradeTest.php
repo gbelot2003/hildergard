@@ -41,7 +41,7 @@ class GradeTest extends TestCase
     public function a_user_can_create_grades() 
     {
         
-        $this->withoutExceptionHandling();
+        //$this->withoutExceptionHandling();
 
         // Creamos un usuario
         $user = User::factory()->make();
