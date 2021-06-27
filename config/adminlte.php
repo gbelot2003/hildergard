@@ -244,7 +244,6 @@ return [
         [
             'text' => 'Dashboard',
             'url'  => 'dashboard',
-            'can'  => 'editor',
         ],
         [
             'text' => 'Usuarios',

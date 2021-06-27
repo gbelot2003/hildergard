@@ -29,23 +29,19 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasRole('administrador') ? true : null;
         });
 
-        Gate::define('editor', function (User $user, Post $post) {
+        Gate::define('editor', function ($user) {
             return $user->hasRole('editor') ? true : null;
         });
 
-        Gate::after(function ($user, $ability) {
-            return $user->hasRole('editor') ? true : null;
-        });
-
-        Gate::after(function ($user, $ability) {
+        Gate::define('maestro', function ($user) {
             return $user->hasRole('maestro') ? true : null;
         });
 
-        Gate::after(function ($user, $ability) {
+        Gate::define('padre', function ($user) {
             return $user->hasRole('padre') ? true : null;
         });
 
-        Gate::after(function ($user, $ability) {
+        Gate::define('alumno', function ($user) {
             return $user->hasRole('alumno') ? true : null;
         });
         
