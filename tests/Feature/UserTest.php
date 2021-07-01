@@ -92,5 +92,6 @@ class UserTest extends TestCase
 
         $this->assertDatabaseHas('users', ['name' => 'cualquiera']);
     }
-
+    //TODO: Testeo de envio de correos
+    //TODO: Testedo de cambio de contraseña por usuario
 }

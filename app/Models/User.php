@@ -63,4 +63,20 @@ class User extends Authenticatable
         return $this->belongsToMany(Grade::class);
     }
 
+    public function profile_url()
+    {   
+        return "admin/profile/$this->id";
+    }
+
+    /**
+     * Retornamos ruta de perfil de usuario
+     * para menu AdminLte
+     *
+     * @return void
+     */
+    public function AdminLte_profile_url()
+    {
+        return "admin/profile/$this->id";
+    }
+
 }
