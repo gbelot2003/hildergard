@@ -27,7 +27,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all();
+        return View('users.create', compact('roles'));
     }
 
     /**
@@ -38,7 +39,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request['password'] = 'password';
+        $request['status'] = true;
+        
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        //TODO: Se necesita enviar un correo con los detalles de la cuanta al usaurio
+        //TODO: Se necesita que el email contenga el password autogenerado y secreto, y que pueda ser cambiado luego por el usuario
+
+        $user = User::create($request->all());
+        $user->roles()->sync($request->roles);
+        
+        return redirect()->to('/admin/usuarios');
     }
 
     /**

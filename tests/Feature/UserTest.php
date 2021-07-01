@@ -67,4 +67,30 @@ class UserTest extends TestCase
         $this->get('/admin/usuarios')
             ->assertStatus(200);
     }
+
+    /** @test */
+    public function admin_can_reach_user_create()
+    {
+        $this->actingAs($this->admin);
+
+        $this->get('/admin/usuarios/create')
+            ->assertStatus(200);
+    }
+
+    /** @test */
+    public function admin_can_create_user()
+    {
+        $this->actingAs($this->admin);
+
+        $data = [
+            'name' => 'cualquiera',
+            'email' => 'cualquiera@cualquiera.com'
+        ];
+
+        $this->post('/admin/usuarios', $data)
+            ->assertRedirect('/admin/usuarios');
+
+        $this->assertDatabaseHas('users', ['name' => 'cualquiera']);
+    }
+
 }
