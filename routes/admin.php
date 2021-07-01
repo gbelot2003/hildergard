@@ -6,7 +6,12 @@ use App\Http\Controllers\GradeController;
 use App\Http\Controllers\Admin\UserController;
 
 Route::group(['middleware' => 'auth'], function() {  
-    Route::resource('usuarios', UserController::class)->names('admin.users');
+    
+    Route::group(['middleware' => 'role:administrador|editor'], function(){
+        Route::resource('usuarios', UserController::class)->names('admin.users');
+        
+    });
+    
 
     Route::get('grados', [GradeController::class, 'index']);
     Route::get('grados/{id}', [GradeController::class, 'show']);
