@@ -15,7 +15,7 @@ class CreateLectionsTable extends Migration
     {
         Schema::create('lections', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('classes_id');
+            $table->unsignedBigInteger('classes_id');
             $table->string('name');
             $table->timestamps();
 
