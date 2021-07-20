@@ -80,7 +80,7 @@ class User extends Authenticatable
 
     public function profile_url()
     {   
-        return "admin/profile/$this->id";
+        return "admin/profile/$this->slug";
     }
 
     /**
@@ -91,7 +91,7 @@ class User extends Authenticatable
      */
     public function AdminLte_profile_url()
     {
-        return "admin/profile/$this->id";
+        return "admin/profile/$this->slug";
     }
 
 }

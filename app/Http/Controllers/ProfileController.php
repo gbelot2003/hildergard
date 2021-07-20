@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller
 {
 
-    public function show($id)
+    public function show($slug)
     {
-        $user = User::findOrFail($id);
+        $user = User::where('slug', '=', $slug)->first();
         return View('users.profile', compact('user'));
     }
 

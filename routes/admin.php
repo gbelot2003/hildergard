@@ -16,5 +16,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('grados/{id}', [GradeController::class, 'show']);
     Route::post('grados', [GradeController::class, 'store']);
 
-    Route::get('profile/{id}', [ProfileController::class, 'show']);
+    Route::get('profile/{slug}', [ProfileController::class, 'show']);
 });
