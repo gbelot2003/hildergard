@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Gerardo Belot',
+                'slug' => 'gerardo-belot',
                 'email' => 'gbelot2003@hotmail.com',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -36,6 +37,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'name' => 'Elmira Mosciski',
+                'slug' => 'slug-number-2',
                 'email' => 'eliza23@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -48,6 +50,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'name' => 'Khalid Swift',
+                'slug' => 'slug-number-3',
                 'email' => 'carey.effertz@example.net',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -60,6 +63,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'name' => 'Alycia Yundt',
+                'slug' => 'slug-number-4',
                 'email' => 'hlemke@example.com',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -72,6 +76,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'name' => 'Lisette Kris',
+                'slug' => 'slug-number-5',
                 'email' => 'berge.adrain@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -84,6 +89,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'name' => 'Leonie Ebert',
+                'slug' => 'slug-number-6',
                 'email' => 'amely72@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -96,6 +102,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'name' => 'Mia Stokes Jr.',
+                'slug' => 'slug-number-7',
                 'email' => 'maymie59@example.com',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -108,6 +115,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 8,
                 'name' => 'Ms. Judy Cassin',
+                'slug' => 'slug-number-8',
                 'email' => 'leonardo.hahn@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -120,6 +128,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 9,
                 'name' => 'Olen Fahey',
+                'slug' => 'slug-number-9',
                 'email' => 'lester83@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -132,6 +141,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 10,
                 'name' => 'Terrence Koch',
+                'slug' => 'slug-number-10',
                 'email' => 'aupton@example.com',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -144,6 +154,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 11,
                 'name' => 'Jermaine Treutel',
+                'slug' => 'slug-number-11',
                 'email' => 'esta20@example.net',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -156,6 +167,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'name' => 'Axel Wolff',
+                'slug' => 'slug-number-12',
                 'email' => 'abbey11@example.net',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -168,6 +180,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 13,
                 'name' => 'Dorothy Medhurst',
+                'slug' => 'slug-number-13',
                 'email' => 'lyla.mcglynn@example.net',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -180,6 +193,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 14,
                 'name' => 'Blaise Hackett',
+                'slug' => 'slug-number-14',
                 'email' => 'stephen82@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -192,6 +206,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 15,
                 'name' => 'Linnie Beatty',
+                'slug' => 'slug-number-15',
                 'email' => 'elwin.jacobi@example.net',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -204,6 +219,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 16,
                 'name' => 'Yadira Orn',
+                'slug' => 'slug-number-16',
                 'email' => 'pierre.kunde@example.com',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -216,6 +232,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 17,
                 'name' => 'Jessie Bergnaum',
+                'slug' => 'slug-number-17',
                 'email' => 'sschroeder@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -228,6 +245,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 18,
                 'name' => 'Doris Hills',
+                'slug' => 'slug-number-18',
                 'email' => 'ashley20@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -240,6 +258,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 19,
                 'name' => 'Otha Leuschke',
+                'slug' => 'slug-number-19',
                 'email' => 'darlene.hirthe@example.net',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -252,6 +271,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 20,
                 'name' => 'Lou Armstrong Sr.',
+                'slug' => 'slug-number-20',
                 'email' => 'pkessler@example.org',
                 'email_verified_at' => '2021-06-03 18:39:11',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
