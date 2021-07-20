@@ -7,3 +7,7 @@
         <h1>Perfil de {{  $user->name }}</h1>
     </div>
 @stop
+
+@section('content')
+    
+@stop

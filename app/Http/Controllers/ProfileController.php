@@ -13,4 +13,9 @@ class ProfileController extends Controller
         $user = User::findOrFail($id);
         return View('users.profile', compact('user'));
     }
+
+    public function edit($id)
+    {
+        
+    }
 }
