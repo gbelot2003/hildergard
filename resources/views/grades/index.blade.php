@@ -3,7 +3,11 @@
 @section('title', 'Administración de Grados')
 
 @section('content_header')
-    <h1>Administración de Grados</h1>
+   
+        <div class="d-flex justify-content-between">
+         <h1>Administración de Grados</h1>
+        <a href="/admin/grados/create" class="btn btn-primary">Nuevo Grado Lectivo</a>
+    </div>
 @stop
 
 @section('content')
@@ -12,13 +16,5 @@
         <strong>{{ session('info') }}</strong>
     </div>
 @endif
-    <div class="card">
-        <div class="card-body">
-            <ul>
-                @foreach ($grades as $grade)
-                    <li>{{ $grade->name }}</li>     
-                @endforeach
-            </ul>
-        </div>
-    </div>
+    @livewire('admin.grades-table')
 @stop
