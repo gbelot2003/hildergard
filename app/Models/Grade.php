@@ -32,7 +32,7 @@ class Grade extends Model
      *
      * @return void
      */
-    public function studerns()
+    public function students()
     {
         return $this->belongsToMany(User::class);
     }

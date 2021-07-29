@@ -39,7 +39,7 @@ class GradeTest extends TestCase
         $user1 = User::factory()->create();
 
         // Sincronizamos los modelos
-        $grado->studerns()->sync($user1);
+        $grado->students()->sync($user1);
 
         $this->assertDatabaseHas('grade_user', [
             'user_id' => $user1->id,
