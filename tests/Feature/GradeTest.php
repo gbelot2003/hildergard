@@ -82,4 +82,21 @@ class GradeTest extends TestCase
         $this->get('/admin/grados/' . $grade->id)
             ->assertSee($grade->name);
     }
+
+    /** @test */
+    public function auth_user_can_get_edit_page()
+    {
+
+        // Creamos un grado
+        $grade = Grade::factory()->create();
+
+        // Creamos un usuario
+        $user = User::factory()->make();
+
+        // Instanciamos al usuario a sesion
+        $this->actingAs($user);
+
+        $this->get('/admin/grados/' . $grade->id . "/edit" )
+        ->assertSee('Edición de Grados');
+    }
 }

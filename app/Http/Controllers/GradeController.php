@@ -52,4 +52,15 @@ class GradeController extends Controller
 
         return redirect()->to('admin/grados')->with('flash', 'El nuevo grado a sido creado');
     }
+
+
+    public function edit($id)
+    {
+        $grade = Grade::findOrFail($id);
+        $maestros = User::whereHas('roles', function($q){
+            $q->where('name', '=', 'maestro');
+        })->pluck('name', 'id');
+
+        return view('grades.edit', compact('grade', 'maestros'));
+    }
 }

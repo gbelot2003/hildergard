@@ -15,6 +15,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('grados', [GradeController::class, 'index'])->name('admin.grades.index');
     Route::get('grados/create', [GradeController::class, 'create'])->name('admin.grades.create');
     Route::post('grados', [GradeController::class, 'store'])->name('admin.grades.store');
+    Route::get('grados/{id}/edit', [GradeController::class, 'edit'])->name('admin.grades.edit');
     Route::get('grados/{id}', [GradeController::class, 'show']);
     
 
