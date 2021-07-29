@@ -50,6 +50,6 @@ class GradeController extends Controller
             ]
         ));
 
-        return redirect()->to('admin/grades')->with('flash', 'El nuevo grado a sido creado');
+        return redirect()->to('admin/grados')->with('flash', 'El nuevo grado a sido creado');
     }
 }
