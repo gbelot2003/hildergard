@@ -13,8 +13,10 @@ Route::group(['middleware' => 'auth'], function() {
     });
     
     Route::get('grados', [GradeController::class, 'index']);
-    Route::get('grados/{id}', [GradeController::class, 'show']);
+    Route::get('grados/create', [GradeController::class, 'create']);
     Route::post('grados', [GradeController::class, 'store']);
+    Route::get('grados/{id}', [GradeController::class, 'show']);
+    
 
     Route::get('profile/{slug}', [ProfileController::class, 'show']);
 });

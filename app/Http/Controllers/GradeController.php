@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 class GradeController extends Controller
 {
 
+
     public function index()
     {
         $grades = Grade::all();
         return view('grades.index', compact('grades'));
     }
+
 
     public function show($id)
     {
@@ -20,6 +22,13 @@ class GradeController extends Controller
         return view('grades.show', ['grade' => $grade]);
     }
 
+
+    public function create()
+    {
+        return view('grades.create');
+    }
+
+    
     public function store(Request $request)
     {
         
