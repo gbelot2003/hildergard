@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grade;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
@@ -25,7 +26,11 @@ class GradeController extends Controller
 
     public function create()
     {
-        return view('grades.create');
+        $maestros = User::whereHas('roles', function($q){
+            $q->where('name', '=', 'maestro');
+        })->pluck('name', 'id');
+
+        return view('grades.create', compact('maestros'));
     }
 
     
