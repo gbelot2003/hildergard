@@ -12,9 +12,9 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('usuarios', UserController::class)->names('admin.users');
     });
     
-    Route::get('grados', [GradeController::class, 'index']);
-    Route::get('grados/create', [GradeController::class, 'create']);
-    Route::post('grados', [GradeController::class, 'store']);
+    Route::get('grados', [GradeController::class, 'index'])->name('admin.grades.index');
+    Route::get('grados/create', [GradeController::class, 'create'])->name('admin.grades.create');
+    Route::post('grados', [GradeController::class, 'store'])->name('admin.grades.store');
     Route::get('grados/{id}', [GradeController::class, 'show']);
     
 

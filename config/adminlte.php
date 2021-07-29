@@ -250,6 +250,11 @@ return [
             'route'  => 'admin.users.index',
             'can'  => 'editor',
         ],
+        [
+            'text' => 'Grados',
+            'route'  => 'admin.grades.index',
+            'can'  => 'editor',
+        ],
        /** [
             'text'        => 'pages',
             'url'         => 'admin/pages',
