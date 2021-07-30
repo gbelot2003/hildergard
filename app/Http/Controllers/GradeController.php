@@ -63,4 +63,12 @@ class GradeController extends Controller
 
         return view('grades.edit', compact('grade', 'maestros'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $grade = Grade::findOrFail($id);
+        $grade->update($request->all());
+
+        return redirect()->to('admin/grados')->with('flash', 'El grado a sido actualizado');
+    }
 }
