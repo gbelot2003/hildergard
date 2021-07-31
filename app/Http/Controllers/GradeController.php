@@ -20,7 +20,7 @@ class GradeController extends Controller
     public function show($id)
     {
         $grado = Grade::findOrFail($id);
-        return view('grades.show', ['grade' => $grade]);
+        return view('grades.show', ['grade' => $grado]);
     }
 
 
