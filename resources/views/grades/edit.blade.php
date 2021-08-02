@@ -9,7 +9,7 @@
 @section('content')
 
 {{ Form::model($grade, ['method' => 'PATCH', 'route' => ['admin.grades.update', $grade->id]]) }}
-    @include('grades.form')
+    @include('grades.form', ['edit' => true])
 {{ Form::close() }}
 
 @stop

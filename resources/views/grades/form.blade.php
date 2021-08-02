@@ -15,7 +15,12 @@
     </div>
 
     <div class="form-group col-md-12">
+        @if ($edit === true)
+        <button type="submit" class="btn btn-primary">Editar</button>
+        @else
         <button type="submit" class="btn btn-primary">Crear</button>
+        @endif
+
     </div>
 
 </div>

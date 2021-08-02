@@ -10,7 +10,7 @@
     <div class="card">
         <div class="card-body">
             {{ Form::open(['route' => ['admin.grades.store']]) }}
-                @include('grades.form')
+                @include('grades.form', ['edit' => false])
             {{ Form::close() }}
         </div>
     </div>
