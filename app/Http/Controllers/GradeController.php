@@ -54,9 +54,7 @@ class GradeController extends Controller
     public function edit($id)
     {
         $grade = Grade::findOrFail($id);
-        $maestros = User::whereHas('roles', function($q){
-            $q->where('name', '=', 'maestro');
-        })->pluck('name', 'id');
+        $maestros = User::teachers()->pluck('name', 'id');
 
         return view('grades.edit', compact('grade', 'maestros'));
     }
@@ -64,7 +62,11 @@ class GradeController extends Controller
     public function update(Request $request, $id)
     {
         $grade = Grade::findOrFail($id);
-        $grade->update($request->all());
+        $grade->update($request->validate([
+            'name' => 'required',
+            'teacher_id' => 'required',
+            'year' => 'required' 
+        ]));
 
         return redirect()->to('admin/grados')->with('flash', 'El grado a sido actualizado');
     }

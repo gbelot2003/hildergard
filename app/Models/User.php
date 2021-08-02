@@ -94,16 +94,30 @@ class User extends Authenticatable
         return "admin/profile/$this->slug";
     }
 
-    public function teachers()
+    /**
+     * function teachers
+     * devuelve lista de usuarios con rol de maestros
+     * sin test
+     * 
+     * @return collection
+     */
+    public static function teachers()
     {
-        return $this->whereHas('roles', function($q){
+        return self::whereHas('roles', function($q){
             $q->where('name', '=', 'maestro');
         });
     }
 
-    public function students()
+    /**
+     * function students
+     * devuelve lista de usuarios con rol de alumnos
+     * sin test
+     * 
+     * @return collection
+     */
+    public static function students()
     {
-        return $this->whereHas('roles', function($q){
+        return self::whereHas('roles', function($q){
             $q->where('name', '=', 'alumno');
         });
     }
