@@ -27,6 +27,6 @@ class CreateTableGradeUsers extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_grade_users');
+        Schema::dropIfExists('grade_users');
     }
 }
