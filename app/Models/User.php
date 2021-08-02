@@ -94,4 +94,18 @@ class User extends Authenticatable
         return "admin/profile/$this->slug";
     }
 
+    public function teachers()
+    {
+        return $this->whereHas('roles', function($q){
+            $q->where('name', '=', 'maestro');
+        });
+    }
+
+    public function students()
+    {
+        return $this->whereHas('roles', function($q){
+            $q->where('name', '=', 'alumno');
+        });
+    }
+
 }

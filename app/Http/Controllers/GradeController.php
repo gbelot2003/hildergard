@@ -26,10 +26,7 @@ class GradeController extends Controller
 
     public function create()
     {
-        $maestros = User::whereHas('roles', function($q){
-            $q->where('name', '=', 'maestro');
-        })->pluck('name', 'id');
-
+        $maestros = User::teachers()->pluck('name', 'id');
         return view('grades.create', compact('maestros'));
     }
 
