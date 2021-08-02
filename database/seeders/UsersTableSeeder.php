@@ -289,22 +289,22 @@ class UsersTableSeeder extends Seeder
         $user->assignRole('editor');
 
         $user = User::find(3);
-        $user->assignRole('maestro');
+        $user->assignRole(['maestro', 'editor']);
 
         $user = User::find(4);
         $user->assignRole('padre');
 
         $user = User::find(5);
-        $user->assignRole('alumno');
+        $user->assignRole('maestro');
 
         $user = User::find(6);
-        $user->assignRole('alumno');
+        $user->assignRole('maestro');
 
         $user = User::find(7);
-        $user->assignRole('alumno');
+        $user->assignRole('maestro');
 
         $user = User::find(8);
-        $user->assignRole('alumno');
+        $user->assignRole('maestro');
 
         $user = User::find(9);
         $user->assignRole('alumno');

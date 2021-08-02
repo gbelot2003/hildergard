@@ -40,8 +40,8 @@ class GradeTest extends TestCase
     /** @test */
     public function a_user_can_reach_grade_create_page()
     {
-         // Creamos un usuario
-         $user = User::factory()->make();
+        // Creamos un usuario
+        $user = User::factory()->make();
 
         // Instanciamos al usuario a sesion
         $this->actingAs($user);
