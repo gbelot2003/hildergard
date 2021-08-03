@@ -255,6 +255,11 @@ return [
             'route'  => 'admin.grades.index',
             'can'  => 'editor',
         ],
+        [
+            'text' => 'Alumnos',
+            'route'  => 'admin.alumnos.index',
+            'can'  => 'editor',
+        ],
        /** [
             'text'        => 'pages',
             'url'         => 'admin/pages',

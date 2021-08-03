@@ -18,7 +18,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('grados', GradeController::class)->names('admin.grades')->except('destroy');
 
     /** Estudiantes */
-    Route::get('estudiantes', [StudentsController::class, 'index']);
+    Route::get('alumnos', [StudentsController::class, 'index'])->name('admin.alumnos.index');
    
     /**  
     *  Route::group(['middleware' => 'role:administrador|editor|maestro'], function(){

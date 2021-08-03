@@ -21,7 +21,9 @@ class StudentsTest extends TestCase
         // Instanciamos al usuario a sesion
         $this->actingAs($user);
 
-        $this->get('/admin/estudiantes')
+        $this->get('/admin/alumnos')
+
+        // Deberia tener un listado solo de estudiantes
         ->assertSee('Administración de Estudiantes');  
     }
 
