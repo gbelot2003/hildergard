@@ -7,10 +7,9 @@
             <table class="table table-hover table-strep">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Email</th>
-                        <th>Roles</th>
+                        <th>Grado</th>
                         <th>Estado</th>
                         <th></th>
                     </tr>
@@ -18,7 +17,6 @@
                 <tbody>
                     @forelse ($users as $user)
                         <tr>
-                            <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <th>
