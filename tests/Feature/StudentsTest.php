@@ -24,7 +24,7 @@ class StudentsTest extends TestCase
         $this->get('/admin/alumnos')
 
         // Deberia tener un listado solo de estudiantes
-        ->assertSee('Administración de Estudiantes');  
+        ->assertSee('Administración de Alumnos');  
     }
 
 
