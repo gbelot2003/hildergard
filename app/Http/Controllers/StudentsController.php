@@ -9,7 +9,6 @@ class StudentsController extends Controller
 {
     public function index()
     {
-        $students = User::students()->get();
-        return view('estudiantes.index', compact('students'));
+        return view('estudiantes.index');
     }
 }
