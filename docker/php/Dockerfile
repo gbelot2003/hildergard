@@ -34,6 +34,8 @@ RUN set -eux; \
 		pdo_mysql \
 		zip
 
+CMD bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 #CMD composer self-update --2
 
