@@ -1968,9 +1968,7 @@ __webpack_require__(/*! ./select2.js */ "./resources/js/jquery/select2.js");
   \****************************************/
 /***/ (() => {
 
-$(document).ready(function () {
-  console.log('ready');
-});
+$(document).ready(function () {});
 
 /***/ }),
 

@@ -11,4 +11,10 @@ class StudentsController extends Controller
     {
         return view('estudiantes.index');
     }
+
+    public  function edit($id)
+    {
+        $student = User::findOrFail($id);
+        return view('estudiantes.edit');
+    }
 }

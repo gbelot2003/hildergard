@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     /** Estudiantes */
     Route::get('alumnos', [StudentsController::class, 'index'])->name('admin.alumnos.index');
+    Route::get('alumnos/{id}/edit', [StudentsController::class, 'edit'])->name('admin.alumnos.edit');
    
     /**  
     *  Route::group(['middleware' => 'role:administrador|editor|maestro'], function(){

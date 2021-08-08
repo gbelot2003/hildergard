@@ -27,5 +27,23 @@ class StudentsTest extends TestCase
         ->assertSee('Administración de Alumnos');  
     }
 
+    /** @test */
+    public function a_user_can_reach_student_edit()
+    {
+
+        $student = User::factory()->create();
+
+        // Creamos un usuario
+        $user = User::factory()->make();
+
+        // Instanciamos al usuario a sesion
+        $this->actingAs($user);
+
+        $this->get("/admin/alumnos/" . $student->id . "/edit")
+
+            // Deberia tener un listado solo de estudiantes
+            ->assertSee('Edición de Alumno');
+    }
+
 
 }
