@@ -456,7 +456,7 @@ return [
             ]
         ],
         'local' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'css',
