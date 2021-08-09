@@ -12,6 +12,8 @@ class Grade extends Model
 
     protected $fillable = ['name', 'teacher_id', 'year'];
 
+    protected $with = 'teacher';
+
     /** Configuracion de ruta de modelo */
     public function path()
     {
