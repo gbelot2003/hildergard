@@ -7,11 +7,19 @@ use Illuminate\Http\Request;
 
 class StudentsController extends Controller
 {
+    
     public function index()
     {
         return view('estudiantes.index');
     }
 
+    
+    public function create()
+    {
+        return view('estudiantes.create');
+    }
+
+    
     public  function edit($id)
     {
         $student = User::findOrFail($id);
