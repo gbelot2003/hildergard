@@ -29,11 +29,13 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        $student = $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required'
-        ]);
+        // Debe crear un nuevo usuario
+
+        // Debe guardar la informacion extra
+
+        // Debe generar una nueva contraseña
+        // Debe enviar un email con la contraseña generada
+
     }
 
     /**

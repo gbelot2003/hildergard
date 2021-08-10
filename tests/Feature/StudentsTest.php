@@ -12,6 +12,47 @@ class StudentsTest extends TestCase
 
     use RefreshDatabase, WithFaker;
 
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        \Artisan::call('migrate', ['-vvv' => true]);
+
+        // The configuratios are load from seed
+        \Artisan::call('db:seed', ['-vvv' => true]);
+
+        // Creamos un alumno
+        $this->alumno = User::factory()->create();
+        $this->alumno->assignRole('alumno'); // Asignamos rol
+
+        // Creamos un editor
+        $this->editor = User::factory()->create();
+        $this->editor->assignRole('editor'); // Asignamos rol
+
+        // Creamos un admin
+        $this->admin = User::factory()->create();
+        $this->admin->assignRole('administrador'); // Asignamos rol
+    }
+
+
+    /** @test */
+    public function a_user_can_create_a_new_student()
+    {
+        // Teniendo un editor/administrador
+        $this->actingAs($this->editor);
+
+        $data = [
+            'name' => 'cualquiera',
+            'email' => 'cualquiera@cualquiera.com',
+            'grade_id' => 2,
+            'address' => 'some address'
+        ];
+
+        $alumno = $this->post('/admin/alumnos', $data);
+
+        $this->assertDatabaseHas('users', ['name' => 'cualquiera']);
+    }
+
     /** @test */
     public function a_user_can_reach_student_index()
     {
@@ -41,11 +82,6 @@ class StudentsTest extends TestCase
 
             // Deberia tener un listado solo de estudiantes
             ->assertSee('Crear Nuevo Alumno');
-    }
-
-    /** @test **/
-    public function a_user_can_create_a_new_student()
-    {
     }
 
 
