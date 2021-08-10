@@ -40,6 +40,8 @@ class StudentsTest extends TestCase
     public function a_user_can_create_a_new_student()
     {
 
+        $this->withoutExceptionHandling();
+
         // Creando un grado
         $grado = Grade::factory()->create();
 
@@ -54,9 +56,9 @@ class StudentsTest extends TestCase
             'grade_id' => $grado->id,
         ];
 
-        $alumno = $this->post('/admin/alumnos', $data);
+        $this->post('/admin/alumnos', $data);
 
-        $this->assertDatabaseHas('users', ['name' => 'cualquiera']);
+        $this->assertDatabaseHas('users', ['name' => $data['name']]);
     }
 
     /** @test */
