@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Grade;
 use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -38,14 +39,19 @@ class StudentsTest extends TestCase
     /** @test */
     public function a_user_can_create_a_new_student()
     {
+
+        // Creando un grado
+        $grado = Grade::factory()->create();
+
         // Teniendo un editor/administrador
         $this->actingAs($this->editor);
 
         $data = [
-            'name' => 'cualquiera',
-            'email' => 'cualquiera@cualquiera.com',
-            'grade_id' => 2,
-            'address' => 'some address'
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'address' => $this->faker->address,
+            'phone' => $this->faker->phoneNumber,
+            'grade_id' => $grado->id,
         ];
 
         $alumno = $this->post('/admin/alumnos', $data);
