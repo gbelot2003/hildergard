@@ -23,14 +23,14 @@ class StudentsTest extends TestCase
 
         $this->get('/admin/alumnos')
 
-        // Deberia tener un listado solo de estudiantes
-        ->assertSee('Administración de Alumnos');  
+            // Deberia tener un listado solo de estudiantes
+            ->assertSee('Administración de Alumnos');
     }
 
     /** @test **/
     public  function a_user_can_reach_student_create()
     {
-        
+
         // Creamos un usuario
         $user = User::factory()->make();
 
@@ -42,7 +42,13 @@ class StudentsTest extends TestCase
             // Deberia tener un listado solo de estudiantes
             ->assertSee('Crear Nuevo Alumno');
     }
-    
+
+    /** @test **/
+    public function a_user_can_create_a_new_student()
+    {
+    }
+
+
     /** @test */
     public function a_user_can_reach_student_edit()
     {
@@ -60,6 +66,4 @@ class StudentsTest extends TestCase
             // Deberia tener un listado solo de estudiantes
             ->assertSee('Edición de Alumno');
     }
-
-
 }

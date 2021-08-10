@@ -13,9 +13,4 @@ class ProfileController extends Controller
         $user = User::where('slug', '=', $slug)->first();
         return View('users.profile', compact('user'));
     }
-
-    public function edit($id)
-    {
-        
-    }
 }
