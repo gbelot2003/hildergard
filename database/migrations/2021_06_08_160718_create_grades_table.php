@@ -24,6 +24,12 @@ class CreateGradesTable extends Migration
                 ->references('id')
                 ->on('users');
         });
+
+        Schema::create('grade_user', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id')->unsigned();
+            $table->integer('grade_id')->unsigned();
+        });
     }
 
     /**
@@ -33,6 +39,7 @@ class CreateGradesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('grade_user');
         Schema::dropIfExists('grades');
     }
 }
