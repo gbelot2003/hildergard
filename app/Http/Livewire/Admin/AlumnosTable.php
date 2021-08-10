@@ -28,7 +28,7 @@ class AlumnosTable extends Component
             $q->orWhere('name', 'like', '%' . $this->search . '%')
                 ->orWhere('email', 'like', '%' . $this->search . '%');
         })
-        ->paginate(20);
+        ->paginate(10);
         return view('livewire.admin.alumnos-table', compact('users'));
     }
 }
