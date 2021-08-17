@@ -21,7 +21,7 @@
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->teacher->name }}</td>
                             <td>{{ $row->year }}</td>
-                            <td>15</td>
+                            <td>{{ $row->students->count() }}</td>
                             <td><a class="btn btn-info" href="/admin/grados/{{ $row->id }}/edit">Editar</a></td>
                         </tr>
                     @endforeach
