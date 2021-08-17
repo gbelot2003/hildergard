@@ -1,9 +1,10 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <input type="text" wire:model.debounce.800="search" class="form-control" placeholder="Ingrese el nombre o correo de usuario">
+            <input type="text" wire:model.debounce.800="search" class="form-control"
+                placeholder="Ingrese el nombre o correo de usuario">
         </div>
-        <div class="card-body"> 
+        <div class="card-body">
             <table class="table table-hover table-strep">
                 <thead>
                     <tr>
@@ -20,22 +21,20 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <th>
-                                <ul>
-                                    @foreach ($user->roles as $role)
-                                        <li>{{ $role->name }}</li>
-                                    @endforeach
-                                </ul>
-                                
+                                @foreach ($user->grades as $role)
+                                    {{ $role->name }}
+                                @endforeach
                             </th>
                             <td>
                                 @if ($user->status == true)
-                                <span class="badge badge-primary">Activo</span>
+                                    <span class="badge badge-primary">Activo</span>
                                 @else
-                                <span class="badge badge-danger">Suspendido</span>
+                                    <span class="badge badge-danger">Suspendido</span>
                                 @endif
                             </td>
                             <td>
-                                <a class="btn btn-primary" href="{{ route('admin.alumnos.edit', $user->id) }}">Editar</a>
+                                <a class="btn btn-primary"
+                                    href="{{ route('admin.alumnos.edit', $user->id) }}">Editar</a>
                             </td>
                         </tr>
                     @empty

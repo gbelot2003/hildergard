@@ -75,11 +75,7 @@
 
 <body class="@yield('classes_body')" @yield('body_data')>
     <div id="app">
-        @if(flash()->message)
-            <div class="alert alert-info">
-                {{ flash()->message }}
-            </div>
-        @endif
+
         {{-- Body Content --}}
         @yield('body')
     </div>
