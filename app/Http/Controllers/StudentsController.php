@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Grade;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class StudentsController extends Controller
      **/
     public function create()
     {
-        return view('estudiantes.create');
+        $grades = Grade::all()->pluck('name', 'id');
+        return view('estudiantes.create', compact('grades'));
     }
 
     /**
@@ -61,7 +63,8 @@ class StudentsController extends Controller
     public  function edit($id)
     {
         $student = User::findOrFail($id);
-        return view('estudiantes.edit');
+        $grades = Grade::all()->pluck('name', 'id');
+        return view('estudiantes.edit', compact('student', 'grades'));
     }
 
     /**
@@ -70,6 +73,8 @@ class StudentsController extends Controller
     public function update(Request $reques, $id)
     {
         $user = User::findOrFail($id);
+        $user->update($reques->all());
+        //$user->grades->sync($reques->grade_id);
         return $user;
     }
 }

@@ -12,11 +12,7 @@
     <div class="card">
         <div class="card-body">
             {{ Form::open(['route' => ['admin.alumnos.store']]) }}
-            <div class="row">
-                <div class="form-group col-md-12">
-
-                </div>
-            </div>
+                @include('estudiantes._form')
             {{ Form::close() }}
         </div>
     </div>

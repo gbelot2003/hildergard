@@ -62,6 +62,36 @@ class StudentsTest extends TestCase
     }
 
     /** @test */
+    public function a_editor_can_update_studenr()
+    {
+        // errores explicitos
+        $this->withoutExceptionHandling();
+
+        // Creamos un usuario que editar
+        $user = User::factory()->create();
+
+        // Creando un grado
+        $grado = Grade::factory()->create();
+
+        // Teniendo un editor/administrador
+        $this->actingAs($this->editor);
+
+        $data = [
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'address' => $this->faker->address,
+            'phone' => $this->faker->phoneNumber,
+            'grade_id' => $grado->id,
+        ];
+
+        $this->put('/admin/alumnos/' . $user->id, $data);
+
+        $this->assertDatabaseHas('users', ['name' => $data['name']]);
+
+
+    }
+
+    /** @test */
     public function a_user_can_reach_student_index()
     {
         // Creamos un usuario
@@ -110,4 +140,6 @@ class StudentsTest extends TestCase
             // Deberia tener un listado solo de estudiantes
             ->assertSee('Edición de Alumno');
     }
+
+
 }
