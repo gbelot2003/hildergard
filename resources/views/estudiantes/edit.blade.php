@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             {{ Form::model($student, ['route' => ['admin.alumnos.update', $student], 'method' => 'put']) }}
-                @include('estudiantes._form')
+                @include('estudiantes._form', ['edicion' => true])
             {{ Form::close() }}
         </div>
     </div>
