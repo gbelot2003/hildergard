@@ -1,1 +1,1 @@
-require('./select2.js');
+require('./select2');
