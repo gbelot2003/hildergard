@@ -11,10 +11,5 @@
 @stop
 
 @section('content')
-@if (session('flash'))
-    <div class="alert alert-info">
-        <strong>{{ session('flash') }}</strong>
-    </div>
-@endif
     @livewire('admin.grades-table')
 @stop

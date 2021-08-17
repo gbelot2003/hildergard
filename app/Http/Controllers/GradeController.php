@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grade;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Flash\Flash;
 
 class GradeController extends Controller
 {
@@ -29,24 +30,25 @@ class GradeController extends Controller
         return view('grades.create', compact('maestros'));
     }
 
-    
+
     public function store(Request $request)
     {
-        
+
 
         /**
          * TODO: validar que solo usuarios con rol "mestros" puedan ser guias.
-         * TODO: Solo Miebros "EDITORES y ADMIN" pueden crear grados. 
+         * TODO: Solo Miebros "EDITORES y ADMIN" pueden crear grados.
          **/
         $grade = Grade::create($request->validate(
             [
                 'name' => 'required',
                 'teacher_id' => 'required',
-                'year' => 'required' 
+                'year' => 'required'
             ]
         ));
 
-        return redirect()->to('admin/grados')->with('flash', 'El nuevo grado a sido creado');
+        Flash('flash', 'El nuevo grado a sido creado');
+        return redirect()->to('admin/grados');
     }
 
 
@@ -64,9 +66,10 @@ class GradeController extends Controller
         $grade->update($request->validate([
             'name' => 'required',
             'teacher_id' => 'required',
-            'year' => 'required' 
+            'year' => 'required'
         ]));
 
-        return redirect()->to('admin/grados')->with('flash', 'El grado a sido actualizado');
+        Flash('El registro a sido actualizado');
+        return redirect()->to('admin/grados');
     }
 }

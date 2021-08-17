@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Spatie\Flash\Flash;
 
 class UserController extends Controller
 {
@@ -41,7 +42,7 @@ class UserController extends Controller
     {
         $request['password'] = 'password';
         $request['status'] = true;
-        
+
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -52,7 +53,7 @@ class UserController extends Controller
 
         $user = User::create($request->all());
         $user->roles()->sync($request->roles);
-        
+
         return redirect()->to('/admin/usuarios');
     }
 
@@ -105,8 +106,8 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->update($request->all());
         $user->roles()->sync($request->roles);
-        return redirect()->route('admin.users.index')
-            ->with('info', 'Los datos han sido modificados correctamente');
+        Flash('info', 'Los datos han sido modificados correctamente');
+        return redirect()->route('admin.users.index');
     }
 
     /**
