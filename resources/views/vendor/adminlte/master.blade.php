@@ -74,6 +74,11 @@
 </head>
 
 <body class="@yield('classes_body')" @yield('body_data')>
+    @if(flash()->message)
+        <div>
+            {{ flash()->message }}
+        </div>
+    @endif
     <div id="app">
         {{-- Body Content --}}
         @yield('body')

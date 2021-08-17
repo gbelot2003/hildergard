@@ -44,6 +44,11 @@
 
             {{-- Main Content --}}
             <div class="content">
+                @if(flash()->message)
+                    <div>
+                        {{ flash()->message }}
+                    </div>
+                @endif
                 <div class="{{ config('adminlte.classes_content') ?: $def_container_class }}">
                     @yield('content')
                 </div>
