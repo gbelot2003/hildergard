@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grade;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Flash\Flash;
 
 class StudentsController extends Controller
 {
@@ -72,9 +73,13 @@ class StudentsController extends Controller
      */
     public function update(Request $reques, $id)
     {
+        //TODO: Validacion
+
         $user = User::findOrFail($id);
         $user->update($reques->all());
-        //$user->grades->sync($reques->grade_id);
-        return $user;
+        $user->grades()->sync($reques->get('grade_id'));
+        Flash('El registro a sido creado', 'success');
+        return redirect()->to('/admin/alumnos');
+
     }
 }

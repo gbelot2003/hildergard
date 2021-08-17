@@ -88,6 +88,7 @@ class StudentsTest extends TestCase
 
         $this->assertDatabaseHas('users', ['name' => $data['name']]);
 
+        $this->assertEquals($user->grades[0]->id, $grado->id);
 
     }
 
