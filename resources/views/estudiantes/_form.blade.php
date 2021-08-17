@@ -22,7 +22,7 @@
 
     <div class="form-group col-md-6">
         <label for="Grado">Grado</label>
-        {!! Form::select('grade_id', $grades, isset($student->grades[0]->id) ? $student->grades[0]->id : null, ['class' => 'form-control select2-js']) !!}
+        {!! Form::select('grade_id', $grades, isset($student->grades[0]->id) ? $student->grades[0]->id : null, ['class' => 'form-control select2-js', 'multiple' => 'multiple']) !!}
     </div>
 
     <div class="form-group col-md-12">
