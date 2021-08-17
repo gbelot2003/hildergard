@@ -84,10 +84,13 @@ class StudentsTest extends TestCase
             'grade_id' => $grado->id,
         ];
 
+        // Enviamos el formulario
         $this->put('/admin/alumnos/' . $user->id, $data);
 
+        // La información del usuario se actualiza
         $this->assertDatabaseHas('users', ['name' => $data['name']]);
 
+        // El usuario tiene el mismo grado que grado->id
         $this->assertEquals($user->grades[0]->id, $grado->id);
 
     }
