@@ -15,6 +15,15 @@ class User extends Authenticatable
 
     protected $with = 'roles';
 
+
+    /**
+     * TODO: Agregar edad del estudiante.
+     * TODO: Agregar fotografia del estudiante.
+     * TODO: Agregar informacion de padres o tutores.
+     * TODO: Clases deben ser entidades relacionadas por tabla y
+     * manejadas en tiempo de edición.
+     */
+
     /**
      * The attributes that are mass assignable.
      *
@@ -84,7 +93,7 @@ class User extends Authenticatable
     }
 
     public function profile_url()
-    {   
+    {
         return "admin/profile/$this->slug";
     }
 
@@ -103,7 +112,7 @@ class User extends Authenticatable
      * function teachers
      * devuelve lista de usuarios con rol de maestros
      * sin test
-     * 
+     *
      * @return collection
      */
     public static function teachers()
@@ -117,7 +126,7 @@ class User extends Authenticatable
      * function students
      * devuelve lista de usuarios con rol de alumnos
      * sin test
-     * 
+     *
      * @return collection
      */
     public static function students()
